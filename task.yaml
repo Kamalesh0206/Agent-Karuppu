@@ -1,0 +1,63 @@
+validate_accounts_task:
+  description: >
+    Retrieve selected Instagram accounts from Account Manager.
+    Verify account status is active and eligible for publishing.
+
+  expected_output: >
+    List of validated Instagram account IDs ready for publishing.
+
+  agent: account_manager
+
+validate_media_task:
+  description: >
+    Validate uploaded media files.
+    Verify supported image and video formats,
+    dimensions, duration limits and file sizes.
+
+  expected_output: >
+    Media validation report containing validation status.
+
+  agent: media_validator
+
+validate_caption_task:
+  description: >
+    Validate caption and hashtags provided by the user.
+    Check for formatting issues and invalid hashtags.
+
+  expected_output: >
+    Validated caption and hashtag package.
+
+  agent: caption_validator
+
+publish_media_task:
+  description: >
+    Publish validated media, caption and hashtags
+    to all validated Instagram accounts.
+
+  expected_output: >
+    Publishing status for each Instagram account.
+
+  agent: publisher
+
+monitor_jobs_task:
+  description: >
+    Monitor publishing jobs.
+    Detect failed jobs and capture failure reasons.
+
+  expected_output: >
+    Publishing monitoring report with success and failure counts.
+
+  agent: monitor
+
+generate_report_task:
+  description: >
+    Generate a final summary report showing:
+    Total accounts processed,
+    Successful publications,
+    Failed publications,
+    Failure reasons.
+
+  expected_output: >
+    Administrative publishing summary report.
+
+  agent: report_generator
