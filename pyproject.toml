@@ -1,21 +1,21 @@
 [project]
-name = "instagram_agent"
+name = "instagram_multi_account_publisher"
 version = "0.1.0"
-description = "instagram_agent using crewAI"
+description = "instagram_multi_account_publisher using crewAI"
 authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.10,<3.14"
 dependencies = [
-    "crewai[llm,tools]==1.14.0",
-    "pyyaml>=6.0"
+    "crewai[file-processing,litellm,tools]==1.14.4",
+    "jambo",
 ]
 
 [project.scripts]
-instagram_agent = "instagram_agent.main:run"
-run_crew = "instagram_agent.main:run"
-train = "instagram_agent.main:train"
-replay = "instagram_agent.main:replay"
-test = "instagram_agent.main:test"
-run_with_trigger = "instagram_agent.main:run_with_trigger"
+instagram_multi_account_publisher = "instagram_multi_account_publisher.main:run"
+run_crew = "instagram_multi_account_publisher.main:run"
+train = "instagram_multi_account_publisher.main:train"
+replay = "instagram_multi_account_publisher.main:replay"
+test = "instagram_multi_account_publisher.main:test"
+run_with_trigger = "instagram_multi_account_publisher.main:run_with_trigger"
 
 [build-system]
 requires = ["hatchling"]
@@ -23,3 +23,6 @@ build-backend = "hatchling.build"
 
 [tool.crewai]
 type = "crew"
+
+[tool.uv]
+override-dependencies = ["litellm<=1.82.6"]
