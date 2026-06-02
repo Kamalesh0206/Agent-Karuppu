@@ -1,0 +1,18 @@
+---
+publish_instagram_content:
+  description: Receive image or video content, caption, hashtags, and selected Instagram
+    accounts from the user. Validate the content, verify selected accounts are active,
+    publish the content to all selected Instagram accounts, track publishing progress,
+    handle failures, and generate a detailed publishing report.
+  expected_output: |-
+    A detailed publishing report containing:
+    - Publishing status (Success/Failed)
+    - Account names involved in publishing attempt (list all accounts even if none provided)
+    - Total selected accounts count
+    - Successfully published account names (list each account name)
+    - Failed account names (list each account name with error details)
+    - Error messages (if any)
+    - Publishing timestamps
+    - Post URLs (if available)
+  agent: instagram_multi_account_publishing_coordinator
+  async_execution: true

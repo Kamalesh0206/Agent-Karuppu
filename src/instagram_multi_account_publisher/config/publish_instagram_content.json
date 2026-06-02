@@ -1,0 +1,1 @@
+{"type":"object","title":"ResponseFormat","required":["Publishing Status","Summary","Success or Failure Reason","Error Details (if any)"],"properties":{"Summary":{"type":"string"},"Publishing Status":{"type":"string"},"Error Details (if any)":{"type":"string"},"Success or Failure Reason":{"type":"string"}}}
