@@ -2,7 +2,23 @@ from pathlib import Path
 import yaml
 
 from crewai import Agent, Task, Crew, Process
+from crewai.project import CrewBase, agent, task, crew
+from crewai import Agent, Task, Crew
 
+@CrewBase
+class InstagramAgent:
+
+    @agent
+    def researcher(self) -> Agent:
+        ...
+
+    @task
+    def research_task(self) -> Task:
+        ...
+
+    @crew
+    def crew(self) -> Crew:
+        ...
 
 class InstagramAgent:
 
